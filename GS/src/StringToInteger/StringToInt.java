@@ -11,7 +11,7 @@ public class StringToInt {
 		Scanner scan = new Scanner(System.in);
 		
 		
-		System.out.println("Enter a string to convert : ");
+		System.out.println("Enter a string to convert : ")     ; 
 		s = scan.nextLine();
 		
 		System.out.println("Converted to number");
