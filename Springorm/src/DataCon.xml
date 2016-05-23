@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="ds2" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> <!-- 3 -->
+		<property name="driverClassName" > <value>com.mysql.jdbc.Driver</value></property>
+		<property name="url">	<value>jdbc:mysql://localhost:3306/pavan_schema</value>	</property>
+		<property name="username">	<value>root</value>	</property>
+		<property name="password">	<value>root</value></property>
+	</bean>
+	
+	<bean id="factory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean"><!-- 2 -->
+        <property name="mappingResources">
+           <list>
+                <value>Event.hbm.xml</value>                             
+            </list>
+        </property>        
+        
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+			   <prop key="hibernate.show_sql">true</prop>
+     			<prop key="hibernate.hbm2ddl.auto">update</prop>
+            </props>
+		</property>       
+		
+        <property name="dataSource" ref="ds2"></property>
+    </bean>
+
+    <bean id="eventDao" class="EventSpringDao">						<!-- 1 -->          
+            <property name="sessionFactory" ref ="factory" >  </property>        
+     </bean>       
+</beans>

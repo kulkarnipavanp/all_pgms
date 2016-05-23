@@ -1,0 +1,13 @@
+default.itunes_linking_hdfs
+default.itunes_linking_cached
+default.conviva
+default.conviva_cached
+default.dma_customer_anonymized
+default.dma_customer_cached
+default.dma_omniture_hdfs
+default.vms_feed
+default.vms_feed_cached
+boxofficemojo.bom_nielson_title
+boxofficemojo.movie_meta_data
+keychest.consumer_linking
+omniture.omniture_dma_simpleview
