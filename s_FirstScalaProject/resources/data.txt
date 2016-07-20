@@ -1,0 +1,4 @@
+source = source_location
+destination = destination location
+username = abc
+password = abc789
